@@ -1,13 +1,4 @@
-﻿using EducationalProject.Options;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EducationalProject.Helpers
+﻿namespace EducationalProject.Helpers
 {
     public static class RequestMessage
     {

@@ -1,12 +1,4 @@
-﻿using EducationalProject.Options;
-using EducationalProject.Services;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace EducationalProject.BackgroundServices
+﻿namespace EducationalProject.BackgroundServices
 {
     public class AccessTokenService : BackgroundService
     {

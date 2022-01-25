@@ -1,9 +1,3 @@
-using EducationalProject;
-using EducationalProject.BackgroundServices;
-using EducationalProject.MiddlewareRegistration;
-using EducationalProject.Options;
-using EducationalProject.Services;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
