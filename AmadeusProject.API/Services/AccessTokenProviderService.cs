@@ -1,17 +1,4 @@
-﻿using EducationalProject.Helpers;
-using EducationalProject.Models;
-using EducationalProject.Options;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using System;
-using System.Net.Http;
-using System.Text;
-using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace EducationalProject.Services
+﻿namespace EducationalProject.Services
 {
     public class AccessTokenProviderService
     {

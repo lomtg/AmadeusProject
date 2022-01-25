@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Threading;
-using System.Threading.Tasks;
-
-namespace EducationalProject.Controllers
+﻿namespace EducationalProject.Controllers
 {
 
     [ApiController]

@@ -1,11 +1,4 @@
-﻿using EducationalProject.Options;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
-using System;
-using System.Threading.Tasks;
-
-namespace EducationalProject.Middleware
+﻿namespace EducationalProject.Middleware
 {
     public class ServiceAvailableMiddleware
     {

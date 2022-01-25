@@ -1,7 +1,4 @@
-﻿using EducationalProject.Middleware;
-using Microsoft.AspNetCore.Builder;
-
-namespace EducationalProject.MiddlewareRegistration
+﻿namespace EducationalProject.MiddlewareRegistration
 {
     public static class MiddlewareExtensions
     {
