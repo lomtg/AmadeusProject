@@ -15,6 +15,7 @@ builder.Services.AddHttpClient<AccessTokenProviderService>(client =>
             client.BaseAddress = new Uri("https://test.api.amadeus.com");
             client.Timeout = new TimeSpan(0, 0, 5);
             });
+
 builder.Services.Configure<ServiceAvailableOptions>(builder.Configuration.GetSection("AppServices"));
 builder.Services.Configure<AccessTokenOptions>(builder.Configuration.GetSection("Tokens"));
 builder.Services.Configure<AmadeusAPIOptions>(builder.Configuration.GetSection("AmadeusAPI"));
