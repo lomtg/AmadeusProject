@@ -1,7 +1,5 @@
-﻿namespace EducationalProject.Options
+﻿namespace EducationalProject.Options;
+public class AccessTokenOptions
 {
-    public class AccessTokenOptions
-    {
-        public string AccessToken { get; set; }
-    }
+    public string? AccessToken { get; set; }
 }

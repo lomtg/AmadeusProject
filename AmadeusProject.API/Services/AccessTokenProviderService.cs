@@ -1,26 +1,25 @@
-﻿namespace EducationalProject.Services
+﻿namespace EducationalProject.Services;
+public class AccessTokenProviderService
 {
-    public class AccessTokenProviderService
+    private readonly ILogger<AccessTokenProviderService> _logger;
+    private readonly AmadeusAPIOptions _amadeusAPIOptions;
+    private readonly HttpClient _httpClient;
+    public AccessTokenProviderService(
+        ILogger<AccessTokenProviderService> logger,
+        IOptions<AmadeusAPIOptions> amadeusAPIOptions,
+        HttpClient httpClient)
     {
-        private readonly ILogger<AccessTokenProviderService> _logger;
-        private readonly AmadeusAPIOptions amadeusAPIOptions;
-        private readonly HttpClient _httpClient;
-        public AccessTokenProviderService(
-            ILogger<AccessTokenProviderService> logger,
-            IOptions<AmadeusAPIOptions> _amadeusAPIOptions,
-            HttpClient httpClient)
-        {
-            _logger = logger;
-            amadeusAPIOptions = _amadeusAPIOptions.Value;
-            _httpClient = httpClient;
-        }
+        _logger = logger;
+        _amadeusAPIOptions = amadeusAPIOptions.Value;
+        _httpClient = httpClient;
+    }
 
-        public async Task<string> GetAccesToken(CancellationToken token)
+    public async Task<string?> GetAccesToken(CancellationToken token)
+    {
+        try
         {
-            try
-            {
 
-            var res = await _httpClient.SendAsync(RequestMessage.AccessTokenRequestMessage(amadeusAPIOptions.ApiKey,amadeusAPIOptions.ApiSecret), token);
+            var res = await _httpClient.SendAsync(RequestMessage.AccessTokenRequestMessage(_amadeusAPIOptions.ApiKey, _amadeusAPIOptions.ApiSecret), token);
 
             res.EnsureSuccessStatusCode();
 
@@ -28,13 +27,14 @@
 
             var oauthResult = await JsonSerializer.DeserializeAsync<OAuthResult>(stream);
 
-            return oauthResult.access_token;
-            }
-            catch(Exception ex)
-            {
-                _logger.LogInformation(ex.Message);
-                return "";
-            }
+            _logger.LogInformation("Token received");
+
+            return oauthResult?.access_token;
+        }
+        catch (Exception ex)
+        {
+            _logger.LogInformation(ex.Message);
+            return "";
         }
     }
 }

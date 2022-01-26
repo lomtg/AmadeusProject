@@ -1,7 +1,5 @@
-﻿namespace EducationalProject.Options
+﻿namespace EducationalProject.Options;
+public class ServiceAvailableOptions
 {
-    public class ServiceAvailableOptions
-    {
-        public bool ServiceAvailable { get; set; }
-    }
+    public bool ServiceAvailable { get; set; }
 }

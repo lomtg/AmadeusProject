@@ -1,7 +1,5 @@
-﻿namespace EducationalProject.Models
+﻿namespace EducationalProject.Models;
+public class OAuthResult
 {
-    public class OAuthResult
-    {
-        public string access_token { get; set; }
-    }
+    public string? access_token { get; set; }
 }
