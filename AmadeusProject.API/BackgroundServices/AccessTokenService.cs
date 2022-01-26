@@ -18,6 +18,17 @@ public class AccessTokenService : BackgroundService
         _accessTokenOptions = accessTokenOptions;
     }
 
+    public override Task StartAsync(CancellationToken cancellationToken)
+    {
+        if (_serviceAvailableOptions.CurrentValue.ServiceAvailable)
+        {
+            return Task.CompletedTask;
+        }
+
+        return base.StartAsync(cancellationToken);
+    }
+
+
     public override Task StopAsync(CancellationToken cancellationToken)
     {
         _logger.LogInformation("Hosted service shutting down");
