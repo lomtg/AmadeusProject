@@ -20,7 +20,7 @@ public class AccessTokenService : BackgroundService
 
     public override Task StartAsync(CancellationToken cancellationToken)
     {
-        if (_serviceAvailableOptions.CurrentValue.ServiceAvailable)
+        if (!_serviceAvailableOptions.CurrentValue.ServiceAvailable)
         {
             return Task.CompletedTask;
         }
